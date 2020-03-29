@@ -53,7 +53,7 @@ router.get('/forgotPassword', function (req, res) {
                 subject: 'FORGOT PASSWORD FOR APP',
                 text: 'The otp for the new password is' + otp
             };
-            // sgMail.send(msg);
+            sgMail.send(msg);
             docs.otp = otp;
             docs.otp_generated_time = Date.now();
             docs.save();
